@@ -29,7 +29,7 @@
         </TABLE>
     </c:if>
 	<p>
-		<a href="/spring/">add</a>
+		<a href="/spring/">back</a>
 	</p>
 </body>
 </html>

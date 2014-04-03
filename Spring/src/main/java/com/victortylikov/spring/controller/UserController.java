@@ -25,10 +25,18 @@ public class UserController {
  
         return "listUsers";
     }
+    
+    @RequestMapping(value = "/addUserGet", method = RequestMethod.GET)
+    public String addUserGet(ModelMap map)
+    { 
+    	map.addAttribute("user", new User());
+        return "addUser";
+    }
  
-    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    @RequestMapping(value = "/addUserPost", method = RequestMethod.POST)
     public String addUser(@ModelAttribute(value="user") User user, BindingResult result)
     {
+    	
     	userService.addUser(user);
         return "redirect:/users";
     }

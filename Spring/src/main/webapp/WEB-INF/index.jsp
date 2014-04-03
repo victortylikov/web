@@ -11,7 +11,10 @@
 		<a href="/spring/users">LIST</a>
 	</p>
 	<p>
-		<a href="/views/home.jsp">add</a>
+		<a href="/spring/addUserGet">add</a>
+	</p>
+	<p>
+		<a href="/spring/resources/test.html">test</a>
 	</p>
 </body>
 </html>
