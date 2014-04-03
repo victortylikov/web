@@ -16,6 +16,11 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+    
+/*    @RequestMapping(value = "/index", method = RequestMethod.GET)
+    public String index(ModelMap model) {
+        return "/";
+    }*/
  
     @RequestMapping(value = "/users", method = RequestMethod.GET)
     public String listUsers(ModelMap map)
@@ -39,6 +44,17 @@ public class UserController {
     	
     	userService.addUser(user);
         return "redirect:/users";
+    }
+    
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public String login(ModelMap model) {
+        return "login";
+    }
+    
+    @RequestMapping(value = "/accessdenied", method = RequestMethod.GET)
+    public String loginerror(ModelMap model) {
+        model.addAttribute("error", "true");
+        return "accessdeniedpage";
     }
 	
 }
