@@ -17,17 +17,17 @@ public class UserController {
     @Autowired
     private UserService userService;
     
-/*    @RequestMapping(value = "/index", method = RequestMethod.GET)
+    @RequestMapping(value = "/index", method = RequestMethod.GET)
     public String index(ModelMap model) {
-        return "/";
-    }*/
+        return "../index";
+    }
  
     @RequestMapping(value = "/users", method = RequestMethod.GET)
     public String listUsers(ModelMap map)
     {
         map.addAttribute("user", new User());
         map.addAttribute("listUsers", userService.findAllUsers());
- 
+   
         return "listUsers";
     }
     
@@ -51,10 +51,10 @@ public class UserController {
         return "login";
     }
     
-    @RequestMapping(value = "/accessdenied", method = RequestMethod.GET)
+    @RequestMapping(value = "/loginfail", method = RequestMethod.GET)
     public String loginerror(ModelMap model) {
         model.addAttribute("error", "true");
-        return "accessdeniedpage";
+        return "/error/loginfailure";
     }
-	
+
 }

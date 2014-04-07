@@ -10,7 +10,7 @@
 
 
 	<p>
-		<a href="/spring/">back</a>
+		<a href="/spring/index">back</a>
 	</p>
 </body>
 </html>

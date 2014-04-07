@@ -29,5 +29,7 @@
 		</table>
 	</form:form>
 	
+	<a href="/spring/index">back</a>
+	
 </body>
 </html>

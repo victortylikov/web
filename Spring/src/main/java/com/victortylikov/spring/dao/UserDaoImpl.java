@@ -16,7 +16,7 @@ public class UserDaoImpl implements UserDao {
 
 	@Override
 	public List<User> findAllUsers() {
-		return sessionFactory.getCurrentSession().createQuery("from User").list();
+		return sessionFactory.getCurrentSession().createQuery("select distinct u from User u left join fetch u.roles r").list();
 	}
 
 	@Override

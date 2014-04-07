@@ -25,5 +25,9 @@
 	<p>
 		<a href="/spring/login">login</a>
 	</p>
+	<p>
+		<a href="/spring/resources/te.html">error404</a>
+	</p>
+
 </body>
 </html>
