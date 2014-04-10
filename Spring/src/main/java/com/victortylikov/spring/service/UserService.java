@@ -9,4 +9,6 @@ public interface UserService {
 	List<User> findAllUsers();
 
 	void addUser(User user);
+	
+	User getUserByName(String login);
 }
