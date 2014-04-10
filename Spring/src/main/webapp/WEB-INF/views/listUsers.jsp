@@ -21,7 +21,7 @@
 			<TBODY>
 				<c:forEach items="${listUsers}" var="user">
 					<TR>
-						<TD><a href="/spring/info/${user.login}">${user.login}</a></TD>
+						<TD>${user.login}</TD>
 						<TD>${user.password}</TD>
 						<TD>${user.email}</TD>
 						<c:if test="${!empty user.roles}">

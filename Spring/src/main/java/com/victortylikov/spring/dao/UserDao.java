@@ -9,6 +9,4 @@ public interface UserDao {
 	List<User> findAllUsers();
 
 	void addUser(User user);
-	
-	User getUserByName(String login);
 }

@@ -2,7 +2,6 @@ package com.victortylikov.spring.dao;
 
 import java.util.List;
 
-import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -32,18 +31,6 @@ public class UserDaoImpl implements UserDao {
 
 	public void setSessionFactory(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
-	}
-
-	@Override
-	public User getUserByName(String login) {
-	/*	Query query=sessionFactory.getCurrentSession().createQuery("select distinct u from User u u.login = :login");
-		query.setParameter("login", login);*/
-		User query=new User();
-		query.setIdUser(1);
-		query.setLogin(login);
-		query.setPassword("test");
-		query.setEmail("test@mail.ru");
-		return (User) query;
 	}
 
 }

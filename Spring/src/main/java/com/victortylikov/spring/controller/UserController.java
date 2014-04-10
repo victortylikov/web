@@ -5,7 +5,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -56,13 +55,6 @@ public class UserController {
     public String loginerror(ModelMap model) {
         model.addAttribute("error", "true");
         return "/error/loginfailure";
-    }
-    
-    @RequestMapping(value = "/info/{login}", method = RequestMethod.GET)
-    public String deleteUser(ModelMap model, @PathVariable("login") String login) {
-        User user=userService.getUserByName(login);
-        model.addAttribute("user", user);
-        return "userInfo";
     }
 
 }
