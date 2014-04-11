@@ -2,6 +2,7 @@ package com.victortylikov.spring.dao;
 
 import java.util.List;
 
+import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -16,7 +17,11 @@ public class UserDaoImpl implements UserDao {
 
 	@Override
 	public List<User> findAllUsers() {
-		return sessionFactory.getCurrentSession().createQuery("select distinct u from User u left join fetch u.roles r").list();
+		return sessionFactory
+				.getCurrentSession()
+				.createQuery(
+						"select distinct u from User u left join fetch u.roles r")
+				.list();
 	}
 
 	@Override
@@ -31,6 +36,22 @@ public class UserDaoImpl implements UserDao {
 
 	public void setSessionFactory(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
+	}
+
+	@Override
+	public User getUserByName(String login) {
+		List<User> users = sessionFactory
+				.getCurrentSession()
+				.createQuery(
+						"select distinct u from User u left join fetch u.roles r")
+				.list();
+		User user = null;
+		for (User u : users) {
+			if (u.getLogin().equals(login)) {
+				user = u;
+			}
+		}
+		return user;
 	}
 
 }

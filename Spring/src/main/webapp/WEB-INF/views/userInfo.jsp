@@ -6,9 +6,9 @@
 </head>
 <body>
 
-	<h1>List of users</h1>
+	<h1>User</h1>
 
-	<c:if test="${not empty listUsers}">
+	<c:if test="${not empty user}">
 		<TABLE>
 			<THEAD>
 				<TR>
@@ -19,9 +19,8 @@
 				</TR>
 			</THEAD>
 			<TBODY>
-				<c:forEach items="${listUsers}" var="user">
 					<TR>
-						<TD><a href="/spring/info/${user.login}">${user.login}</a></TD>
+						<TD>${user.login}</TD>
 						<TD>${user.password}</TD>
 						<TD>${user.email}</TD>
 						<c:if test="${!empty user.roles}">
@@ -30,7 +29,7 @@
 							</c:forEach>
 						</c:if>
 					</TR>
-				</c:forEach>
+				
 			</TBODY>
 		</TABLE>
 	</c:if>
