@@ -12,6 +12,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.JoinColumn;
 
+import org.springframework.security.core.GrantedAuthority;
+
 @Entity
 @Table(name="role")
 public class Role {
@@ -52,5 +54,7 @@ public class Role {
 	public void setRole(String role) {
 		this.role = role;
 	}
+
+
 
 }
