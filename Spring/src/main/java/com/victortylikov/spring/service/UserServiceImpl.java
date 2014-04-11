@@ -35,5 +35,11 @@ public class UserServiceImpl implements UserService {
 		this.userDao = userDao;
 	}
 	
+	@Override
+	@Transactional
+	public User getUserByName(String login) {
+		return userDao.getUserByName(login);
+	}
+	
 
 }
