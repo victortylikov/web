@@ -34,8 +34,9 @@ public class UserServiceImpl implements UserService {
 	public void setUserDao(UserDao userDao) {
 		this.userDao = userDao;
 	}
-
+	
 	@Override
+	@Transactional
 	public User getUserByName(String login) {
 		return userDao.getUserByName(login);
 	}
