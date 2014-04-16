@@ -22,11 +22,7 @@ public class UserDaoImpl implements UserDao {
 
 	@Override
 	public List<User> findAllUsers() {
-		return sessionFactory
-				.getCurrentSession()
-				.createQuery(
-						"select distinct u from User u left join fetch u.roles r")
-				.list();
+		return sessionFactory.getCurrentSession().createQuery("select distinct u from User u left join fetch u.roles r").list();
 	}
 
 	@Override
@@ -50,18 +46,14 @@ public class UserDaoImpl implements UserDao {
 
 	@Override
 	public User getUserByName(String login) {
-		List<User> users = sessionFactory
-				.getCurrentSession()
-				.createQuery(
-						"select distinct u from User u left join fetch u.roles r")
-				.list();
-		User user = null;
-		for (User u : users) {
-			if (u.getLogin().equals(login)) {
-				user = u;
-			}
-		}
-		return user;
+	/*	Query query=sessionFactory.getCurrentSession().createQuery("select distinct u from User u u.login = :login");
+		query.setParameter("login", login);*/
+		User query=new User();
+		query.setIdUser(1);
+		query.setLogin(login);
+		query.setPassword("test");
+		query.setEmail("test@mail.ru");
+		return (User) query;
 	}
 
 }
